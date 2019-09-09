@@ -34,14 +34,20 @@ The above plots indicates little to no correlations between the variables.
 <font size="+2">
 Before we move onto building the actual model, we need to preprocess our dataset into a format in which the Scikit-Learn algorithms can process. This includes binarizing the gender variable and scaling our variables. 
 We will use LabelBinarizer and StandardScaler from Scikit-Learn preprocessing to perform these tasks.
-```javascript
-var Plot = require('plotly-notebook-js');
-
-var myPlot = Plot.createPlot([{ x: [1,2,3], y: [3,4,5] }], { title: 'Plotly in Jupyter!' });
-
-$$html$$ = myPlot.render();
-```
 </font>
+```python
+#Binarize Gender
+from sklearn.preprocessing import LabelBinarizer
+lb = LabelBinarizer()
+lb.fit(data.Genre)
+lb.classes_
+data.Genre = lb.transform(data.Genre)
+
+#Scaling dataset
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X = pd.DataFrame(scaler.fit_transform(data[['Gender','Age','Annual_Income','Spending_Score']]))
+```
 
 ## Building the Model
 ## Interpreting Model Output
