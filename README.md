@@ -21,7 +21,7 @@ Since the data is relatively clean, we don't need to do too much data cleaning. 
 <font size="+2">
 In this section we want to dive deeper into our data and understand the distribution, correlation, range, and behavior of our data. <br>
 Distribution Plot <br>
-<img src="/Images/dist_plots.png" width="400" height="350">
+<img src="/Images/dist_plots.png" width="1000" height="350">
 As we can see, each column is relatively normally distributed. <br>
 Gender Count Plot <br>
 <img src="/Images/gender_count.png" width="400" height="350">
