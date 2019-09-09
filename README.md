@@ -10,7 +10,7 @@
 <font size="+2">In the preliminary data analysis we want to understand the quality, structure and the source of the data. After importing relevant packages and reading our dataset into a data frame, we can use the info and describe methods to have a quick overview of our data. Some common data problems we want to look out for are: missing data, outliers, duplicate rows, columns that needs to be processed, and column types. It's important to recognize data problems early on in the process so we can avoid backtracking later on. Please see below for info and describe method outputs.
 <br>
 <br>
-<img src="/Images/data_info.PNG" width="500" height="400">
+<img src="/Images/data_info.PNG" width="400" height="350">
 
 <br> Summary: No missing values, consistent data types, no outliers, binarize gender.
 Since the data is relatively clean, we don't need to do too much data cleaning. We will just need to binarize the gender column and scale our dataset.
@@ -34,15 +34,63 @@ The above plots indicates little to no correlations between the variables.
 <font size="+2">
 Before we move onto building the actual model, we need to preprocess our dataset into a format in which the Scikit-Learn algorithms can process. This includes binarizing the gender variable and scaling our variables. 
 We will use LabelBinarizer and StandardScaler from Scikit-Learn preprocessing to perform these tasks.
-```javascript
-var Plot = require('plotly-notebook-js');
-
-var myPlot = Plot.createPlot([{ x: [1,2,3], y: [3,4,5] }], { title: 'Plotly in Jupyter!' });
-
-$$html$$ = myPlot.render();
-```
 </font>
 
+```python
+#Binarize Gender
+from sklearn.preprocessing import LabelBinarizer
+lb = LabelBinarizer()
+lb.fit(data.Genre)
+lb.classes_
+data.Genre = lb.transform(data.Genre)
+
+#Scaling dataset
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X = pd.DataFrame(scaler.fit_transform(data[['Gender','Age','Annual_Income','Spending_Score']]))
+```
+
 ## Building the Model
+<font size="+2">
+Now that everything is ready to go, we can start building our model. 
+We want to segment our customers base on different combinations of the variables so our first step is to create dataframes with these combinations. 
+</font>
+
+```python
+income_spending = X[['Annual_Income','Spending_Score']]
+age_spending = X[['Age','Spending_Score']]
+age_income_spending = X[['Age','Spending_Score','Annual_Income']]
+```
+
+<font size="+2">
+Second, we need to determine the optimal number of clusters for each combination of variables. 
+Objective: Minimize Within Cluster Sum of Square (WCSS) with the Elbow method. <br>
+As the number of cluster increases WCSS decreases.<br> 
+When the number of clusters = number of instances WCSS = 0. <br>
+When we graph number of clusters against WCSS we will see an elbow graph.<br>
+On this elbow plot, the marginal decrease in WCSS decreases significantly at the elbow.<br>
+This point will be our optimal number of clusters. 
+</font>
+
+```python
+def WCSS(segment):
+    WCSS = []
+    for n in range(1, 20):
+        clustering = (KMeans(n_clusters = n, n_init = 20, tol = 0.0001, random_state = 21, algorithm = 'auto'))
+        clustering.fit(segment)
+        WCSS.append(clustering.inertia_)
+    plt.plot(np.arange(1,20), WCSS, 'o')
+    plt.plot(np.arange(1,20), WCSS, '-', alpha = 0.5)
+    plt.xlabel('Number of Clusters')
+    plt.ylabel('WCSS')
+    plt.suptitle('Number of Clusters vs WCSS', color='w')
+    plt.show()
+    return WCSS
+```
+
+
+
+
+
 ## Interpreting Model Output
 ## Conclusion
