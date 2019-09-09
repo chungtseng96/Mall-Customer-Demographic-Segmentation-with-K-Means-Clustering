@@ -89,11 +89,11 @@ def WCSS(segment):
 ```
 <br> 
 Segmentation using Age and Spending Score <br> 
-<img src="/Images/age_spending_wcss.png" width="500" height="300">
+<img src="/Images/age_spending_wcss.png" width="450" height="350">
 Segmentation using Income and Spending Score <br> 
-<img src="/Images/income_spending_wcss.png" width="600" height="400">
+<img src="/Images/income_spending_wcss.png" width="450" height="350">
 Segmentation using Age, Income and Spending Score <br> 
-<img src="/Images/age_income_spending_wcss.png" width="700" height="500">
+<img src="/Images/age_income_spending_wcss.png" width="450" height="350">
 
 
 
