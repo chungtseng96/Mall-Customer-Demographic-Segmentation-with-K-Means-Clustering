@@ -21,12 +21,12 @@ Since the data is relatively clean, we don't need to do too much data cleaning. 
 <font size="+2">
 In this section we want to dive deeper into our data and understand the distribution, correlation, range, and behavior of our data. <br>
 Distribution Plot <br>
-<dist_plot>
+<img src="/Images/dist_plots.png" width="1000" height="350">
 As we can see, each column is relatively normally distributed. <br>
 Gender Count Plot <br>
-<count_plot>
+<img src="/Images/gender_count.png" width="400" height="350">
 Pairplot Plot <br>
-<pair_plot>
+<img src="/Images/pairplot.png" width="400" height="350">
 The above plots indicates little to no correlations between the variables.
 </font>
 
@@ -88,7 +88,7 @@ def WCSS(segment):
     return WCSS
 ```
 
-
+Age and 
 
 
 
