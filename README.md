@@ -55,11 +55,13 @@ X = pd.DataFrame(scaler.fit_transform(data[['Gender','Age','Annual_Income','Spen
 Now that everything is ready to go, we can start building our model. 
 We want to segment our customers base on different combinations of the variables so our first step is to create dataframes with these combinations. 
 </font>
+
 ```python
 income_spending = X[['Annual_Income','Spending_Score']]
 age_spending = X[['Age','Spending_Score']]
 age_income_spending = X[['Age','Spending_Score','Annual_Income']]
 ```
+
 <font size="+2">
 Second, we need to determine the optimal number of clusters for each combination of variables. 
 Objective: Minimize Within Cluster Sum of Square (WCSS) with the Elbow method. <br>
@@ -69,6 +71,7 @@ When we graph number of clusters against WCSS we will see an elbow graph.<br>
 On this elbow plot, the marginal decrease in WCSS decreases significantly at the elbow.<br>
 This point will be our optimal number of clusters. 
 </font>
+
 ```python
 def WCSS(segment):
     WCSS = []
