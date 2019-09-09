@@ -8,7 +8,7 @@
 
 ## Preliminary Data Analysis
 <font size="+2">In the preliminary data analysis we want to understand the quality, structure, range, and the source of the data. After importing relevant packages and reading our dataset into a data frame, we can use the info and describe methods to have a quick overview of our data. Some common data problems we want to look out for are: missing data, outliers, duplicate rows, columns that needs to be processed, and column types. It's important to recognize data problems early on in the process so we can avoid backtracking later on. Please see below for info and describe method outputs.
-![Info and Describe](C:\Users\Chung-Tseng Wang\Desktop\Mall-Customer-Demographic-Segmentation-with-K-Means-Clustering\Images/data_info.png)
+![Info and Describe](/Images/data_info.png)
 Format: ![Alt Text](url)
 <br> Summary: No missing values, consistent data types, no outliers, binarize gender.
 
