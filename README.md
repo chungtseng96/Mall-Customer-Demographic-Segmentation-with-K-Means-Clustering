@@ -35,6 +35,7 @@ The above plots indicates little to no correlations between the variables.
 Before we move onto building the actual model, we need to preprocess our dataset into a format in which the Scikit-Learn algorithms can process. This includes binarizing the gender variable and scaling our variables. 
 We will use LabelBinarizer and StandardScaler from Scikit-Learn preprocessing to perform these tasks.
 </font>
+
 ```python
 #Binarize Gender
 from sklearn.preprocessing import LabelBinarizer
