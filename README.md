@@ -72,9 +72,24 @@ On this elbow plot, the marginal decrease in WCSS decreases significantly at the
 This point will be our optimal number of clusters. 
 </font>
 
-1
+```python
+def WCSS(segment):
+    WCSS = []
+    for n in range(1, 20):
+        clustering = (KMeans(n_clusters = n, n_init = 20, tol = 0.0001, random_state = 21, algorithm = 'auto'))
+        clustering.fit(segment)
+        WCSS.append(clustering.inertia_)
+    plt.figure(1, figsize = (9,7))
+    plt.plot(np.arange(1,20), WCSS, 'o')
+    plt.plot(np.arange(1,20), WCSS, '-', alpha = 0.5)
+    plt.xlabel('Number of Clusters')
+    plt.ylabel('WCSS')
+    plt.title('Number of Clusters vs WCSS')
+    plt.suptitle('Number of Clusters vs WCSS', color='w')
+    plt.show()
     return WCSS
 ```
+
 <br> 
 Segmentation using Age and Spending Score <br> 
 <img src="/Images/age_spending_wcss.png" width="450" height="350">
