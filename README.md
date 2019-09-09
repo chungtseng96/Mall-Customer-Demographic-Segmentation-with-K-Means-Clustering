@@ -24,7 +24,7 @@ Distribution Plot <br>
 <img src="/Images/dist_plots.png" width="1000" height="350">
 As we can see, each column is relatively normally distributed. <br>
 Gender Count Plot <br>
-<img src="/Images/gender_count.png" width="400" height="350">
+<img src="/Images/gender_count.png" width="200" height="300">
 Pairplot Plot <br>
 <img src="/Images/pairplot.png" width="400" height="350">
 The above plots indicates little to no correlations between the variables.
