@@ -3,13 +3,14 @@
 <font size="+2">In this project I will explore a dataset on mall customers and perform market basket analysis to understand customer segmentation. This dataset was created for learning purposes of understanding market segmentation and unsupervised learning. I will be using a simple unsupervised learning algorithm called K-Means Clustering to cluster mall customers into different segments. </font>
 
 ## Content
-<font size="+2">As the owner of a mall, I have basic some basic information about customers with our membership card. Our dataset have attributes like CustomerID, age, gender, annual income, and spending score. Spending score is a predefined metric with parameters like consumer behavior and purchasing data.
+<font size="+2">The owners of a commercial mall have some basic information about their customers with a membership card. The dataset contain attributes like CustomerID, age, gender, annual income, and spending score. Spending score is a predefined metric with parameters like consumer behavior and purchasing data.
  </font>
 
 ## Preliminary Data Analysis
 <font size="+2">In the preliminary data analysis we want to understand the quality, structure, range, and the source of the data. After importing relevant packages and reading our dataset into a data frame, we can use the info and describe methods to have a quick overview of our data. Some common data problems we want to look out for are: missing data, outliers, duplicate rows, columns that needs to be processed, and column types. It's important to recognize data problems early on in the process so we can avoid backtracking later on. Please see below for info and describe method outputs.
-
-Summary: No missing values, consistent data types, no outliers, Binarized gender.
+![Info and Describe](C:\Users\Chung-Tseng Wang\Desktop\Mall-Customer-Demographic-Segmentation-with-K-Means-Clustering\Images/data_info.png)
+Format: ![Alt Text](url)
+<br> Summary: No missing values, consistent data types, no outliers, binarize gender.
 
 </font>
 
