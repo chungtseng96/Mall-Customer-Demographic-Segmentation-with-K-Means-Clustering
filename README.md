@@ -23,8 +23,9 @@ In this section we want to dive deeper into our data and understand the distribu
 Distribution Plot <br>
 <img src="/Images/dist_plots.png" width="1000" height="350">
 As we can see, each column is relatively normally distributed. <br>
+<br>
 Gender Count Plot <br>
-<img src="/Images/gender_count.png" width="400" height="350">
+<img src="/Images/gender_count.png" width="200" height="300">
 Pairplot Plot <br>
 <img src="/Images/pairplot.png" width="400" height="350">
 The above plots indicates little to no correlations between the variables.
@@ -79,17 +80,42 @@ def WCSS(segment):
         clustering = (KMeans(n_clusters = n, n_init = 20, tol = 0.0001, random_state = 21, algorithm = 'auto'))
         clustering.fit(segment)
         WCSS.append(clustering.inertia_)
+    plt.figure(1, figsize = (9,7))
     plt.plot(np.arange(1,20), WCSS, 'o')
     plt.plot(np.arange(1,20), WCSS, '-', alpha = 0.5)
     plt.xlabel('Number of Clusters')
     plt.ylabel('WCSS')
+    plt.title('Number of Clusters vs WCSS')
     plt.suptitle('Number of Clusters vs WCSS', color='w')
     plt.show()
     return WCSS
 ```
 
-Age and 
+<br> 
+Segmentation using Age and Spending Score <br> 
+<img src="/Images/age_spending_wcss.png" width="450" height="350">
+Optimal Number of Clusters: 6 <br>
+Segmentation using Income and Spending Score <br> 
+<img src="/Images/income_spending_wcss.png" width="450" height="350">
+Optimal Number of Clusters: 5 <br>
+Segmentation using Age, Income and Spending Score <br> 
+<img src="/Images/age_income_spending_wcss.png" width="450" height="350">
+Optimal Number of Clusters: 6 <br>
+<br> 
+Now that we know the optimal number of clusters for each combination we can start using the K-Means clustering algorithm. 
+To do this efficiently, I created a function that will take a dataframe and the number of clusters as parameters and output the labels of each datapoint, centriods, and the WCSS. 
 
+```python
+def clustering(segment, k):
+    clustering = (KMeans(n_clusters = k, n_init = 20, tol = 0.0001, random_state = 21, algorithm = 'auto'))
+    clustering.fit(segment)
+    labels = clustering.labels_
+    centroids = clustering.cluster_centers_
+    WCSS = clustering.inertia_
+    data = [[labels,centroids, WCSS]]
+    output = pd.DataFrame(data, columns = ['labels','centroids','WCSS'])
+    return output
+```
 
 
 ## Interpreting Model Output
