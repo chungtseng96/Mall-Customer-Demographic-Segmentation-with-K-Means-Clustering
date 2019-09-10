@@ -92,15 +92,17 @@ def WCSS(segment):
 ```
 
 <br> 
-Segmentation using Age and Spending Score <br> 
+**Segmentation using Age and Spending Score** <br> 
 <img src="/Images/age_spending_wcss.png" width="450" height="350">
-Optimal Number of Clusters: 6 <br>
-Segmentation using Income and Spending Score <br> 
+Optimal Number of Clusters: 6 
+<br>
+**Segmentation using Income and Spending Score** <br> 
 <img src="/Images/income_spending_wcss.png" width="450" height="350">
-Optimal Number of Clusters: 5 <br>
-Segmentation using Age, Income and Spending Score <br> 
+Optimal Number of Clusters: 5 
+<br>
+**Segmentation using Age, Income and Spending Score** <br> 
 <img src="/Images/age_income_spending_wcss.png" width="450" height="350">
-Optimal Number of Clusters: 6 <br>
+Optimal Number of Clusters: 6 
 <br> 
 Now that we know the optimal number of clusters for each combination we can start using the K-Means clustering algorithm. 
 To do this efficiently, I created a function that will take a dataframe and the number of clusters as parameters and output the labels of each datapoint, centriods, and the WCSS. 
