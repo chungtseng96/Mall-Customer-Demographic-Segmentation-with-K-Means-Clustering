@@ -127,7 +127,7 @@ For output results please see the results csv file in the model folder.
 Now that we have our model outputs we can visualize them in a 4D scatter plot. <br>
 Below is a 4D scatter plot of the K-Means clustering output segmenting with age, income, and spending score. <br>
 Each axis represents a variable and different colors represents different clusters. 
-<img src="/Images/4D Plot.png" width="450" height="350">
+<img src="/Images/4D plot.png" width="450" height="350">
 
 ## Conclusion 
 From the visualization
