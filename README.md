@@ -102,7 +102,7 @@ Optimal Number of Clusters: 5
 <br>
 <b>Segmentation using Age, Income and Spending Score</b> <br> 
 <img src="/Images/age_income_spending_wcss.png" width="450" height="350">
-Optimal Number of Clusters: 6 
+Optimal Number of Clusters: 6 <br>
 <br> 
 Now that we know the optimal number of clusters for each combination we can start using the K-Means clustering algorithm. 
 To do this efficiently, I created a function that will take a dataframe and the number of clusters as parameters and output the labels of each datapoint, centriods, and the WCSS. 
@@ -128,4 +128,9 @@ Now that we have our model outputs we can visualize them in a 4D scatter plot. <
 Below is a 4D scatter plot of the K-Means clustering output segmenting with age, income, and spending score. <br>
 Each axis represents a variable and different colors represents different clusters. 
 <img src="/Images/Results.png" width="450" height="350">
+
+## Conclusion 
+From the visualization
+
+
 
