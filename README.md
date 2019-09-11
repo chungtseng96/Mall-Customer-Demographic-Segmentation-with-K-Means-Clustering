@@ -26,7 +26,7 @@ As we can see, each column is relatively normally distributed. <br>
 <br>
 Gender Count Plot <br>
 <img src="/Images/gender_count.png" width="200" height="300">
-Pairplot Plot <br>
+Pairplot <br>
 <img src="/Images/pairplot.png" width="400" height="350">
 The above plots indicates little to no correlations between the variables.
 </font>
@@ -92,7 +92,7 @@ def WCSS(segment):
 ```
 
 <br> 
-**Segmentation using Age and Spending Score** <br> 
+<b>Segmentation using Age and Spending Score</b> 
 <img src="/Images/age_spending_wcss.png" width="450" height="350">
 Optimal Number of Clusters: 6 
 <br>
@@ -119,6 +119,9 @@ def clustering(segment, k):
     return output
 ```
 
+<font size="+2">
+For output results please see the results csv file in the model folder.  
+</font>
 
 ## Visualizing Model Output
 Now that we have our model outputs we can visualize them in a 4D scatter plot. <br>
