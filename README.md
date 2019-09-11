@@ -96,11 +96,11 @@ def WCSS(segment):
 <img src="/Images/age_spending_wcss.png" width="450" height="350">
 Optimal Number of Clusters: 6 
 <br>
-**Segmentation using Income and Spending Score** <br> 
+<b>Segmentation using Income and Spending Score</b> <br> 
 <img src="/Images/income_spending_wcss.png" width="450" height="350">
 Optimal Number of Clusters: 5 
 <br>
-**Segmentation using Age, Income and Spending Score** <br> 
+<b>Segmentation using Age, Income and Spending Score</b> <br> 
 <img src="/Images/age_income_spending_wcss.png" width="450" height="350">
 Optimal Number of Clusters: 6 
 <br> 
