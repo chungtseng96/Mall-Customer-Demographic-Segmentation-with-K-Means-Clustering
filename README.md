@@ -130,7 +130,18 @@ Each axis represents a variable and different colors represents different cluste
 <img src="/Images/4D plot.png" width="450" height="350">
 
 ## Conclusion 
-From the visualization
+From the output and the visualization we can see that there are 6 clusters with different characteristics. <br>
+Cluster 1 (Dark Purple) - Low spending score, low annual income, and middle age 
+Cluster 2 (Dark Blue) - Median spending score, median annual income, and middle to old age
+Cluster 3 (Yellow) - High spending score, low annual income, and young age
+Cluster 4 (Orange) - Median spending score, median annual income, and young to middle age
+Cluster 5 (Red) - Low spending score, median to high annual income, and middle age
+Cluster 6 (Light Purple) - High spending score, high annual income, and young to middle age
+
+Once we know the characteristics of these clusters we can dig deeper into their consumer behavior and how it effects the mall's business model. 
+The mall can utilize these insights to drive their advertisement, mall layout, target demographic, shop selections, and etc. 
+
+
 
 
 
